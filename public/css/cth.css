@@ -1,0 +1,29 @@
+﻿html,body {
+    width:100%;
+    height:100%;
+    overflow-y:auto;
+    overflow-x:hidden;
+    
+}
+
+
+*{margin:0;padding:0;-webkit-appearance:none;}
+
+
+.cth-top{width:100%;position:relative;}
+.cth-top img{width:100%;display: block;}
+
+.cth-tab{height:0.85rem;font-size:0.3rem;border-bottom:#737373 solid 0.01rem;}
+.cth-tab span{line-height:0.85rem;margin-left:0.4rem;border-bottom:#146d9d solid 0.04rem;color:#146d9d;height:0.85rem;float:left;}
+
+.cth-body{margin-top:0.1rem;}
+.cth-body li{height:2.25rem;width:100%;list-style:none;padding:0.3rem 0;}
+.cth-body li img{float:left;margin-left:0.3rem;width:1.8rem;height:1.8rem;border-radius:0.05rem;}
+.cth-body-content{margin-left:0.3rem;float:left;width: 5rem;font-size:0.3rem;}
+.cth-body-title{font-size:0.3rem;color: #333;}
+.cth-body-author{color:#999999;font-size:0.25rem;line-height: 0.5rem;}
+
+.submit-btn{position:fixed;bottom:0.3rem;right:0.2rem;background:url(/images/release.png) center/1.25rem no-repeat;width:1.25rem;height:1.25rem;border:none;outline:none;}
+
+.cht-top-mes a{line-height: 0.85rem;height: 0.8rem;width:100%;background:url(/images/hotnews.png) 0 center/7.5rem no-repeat;position: absolute;bottom: 0;font-size: 0.3rem;line-height: 0.8rem;text-indent: 2.4rem;color:#FFF;text-decoration:none;}
+

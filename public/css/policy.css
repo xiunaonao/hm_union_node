@@ -1,0 +1,22 @@
+﻿*{margin:0;padding:0;}
+li{list-style:none;}
+a{text-decoration:none; color:#000000;}
+body,html{width:100%;height:100%;}
+
+.top_nav { width: 3.75rem; height: 0.44rem; line-height: 0.44rem; text-align: center; border-bottom: 0.01rem solid #FFEEEE; }
+.top_nav .back { position: absolute; left: 0.1rem; top: 0.15rem; width: 0.09rem; height: 0.15rem; background-size: 100%; display: inline-block; background-image: url("/images/back@2x.png"); }
+.top_nav .top_title { font-size: 0.15rem; font-family:'Microsoft YaHei'; font-weight:bold; color: #000000; }
+
+.top-img{ width:100%; display:block; margin:0 auto;}
+
+.mian_btn{ width:100%; height:0.2rem; display:table;}
+.mian_btn a{ display:table-cell; width:20%; padding:0.15rem 0; background:#ffffff; text-align:center; font-size:0.16rem; font-family:'Microsoft YaHei'; font-weight:bold; color:#323232;}
+.mian_btn .btn_red{ display:table-cell; width:20%; padding:0.15rem 0; background:#ffffff; border-bottom:0.03rem solid red; text-align:center; font-size:0.16rem; font-family:'Microsoft YaHei'; font-weight:bold; color:red;}
+
+.policy-list{ padding:0.15rem; background:#F5F5F5;}
+.policy-list li{ width:100%; margin-bottom:0.15rem; padding:0.15rem 0; background:#ffffff;}
+.policy-list li p{ margin-bottom:0.1rem; padding:0 0.15rem; font-size:0.15rem; line-height:1.5; font-family:'Microsoft YaHei';}
+.policy-list li .div-look{ padding:0 0.15rem;}
+.policy-list li .div-look:after{ content:""; clear:both; display:table;}
+.policy-list li .div-look .sp-left{ float:left; font-size:0.13rem; font-family:'Microsoft YaHei'; color:#cccccc;}
+.policy-list li .div-look .sp-right{ float:right; font-size:0.13rem; font-family:'Microsoft YaHei'; color:#cccccc;}

@@ -1,0 +1,27 @@
+
+function Vote(){
+
+	var voteObj={
+		init:function(){
+			this.event();
+		},
+		event:function(){
+			var bottomDom=document.querySelectorAll('.vote-button>div');
+			for(var i=0;i<bottomDom.length;i++){
+
+				bottomDom[i].addEventListener('click',function(e){
+					for(var j=0;j<bottomDom.length;j++){
+						document.querySelectorAll('nav')[j].style.display='none';
+						if(bottomDom[j]==this){
+							document.querySelectorAll('nav')[j].style.display='block';
+						}
+					}
+				});
+			}
+		}
+	};
+	voteObj.init();
+	return voteObj;
+}
+
+var vote=new Vote();

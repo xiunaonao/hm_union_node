@@ -1,0 +1,91 @@
+
+<div id="newslist">
+
+    <div id="index-area" class="area-tab">
+        <div v-if="unionList.length>0">
+            <button v-if='obj'  v-for="obj,i in unionList" v-on:touchstart="unionStart(i,$event)" v-on:touchend="unionEnd(i,$event)" v-on:click="changeTab(i)"  v-bind:class="[uIndex==i?'c':'']"><i></i>{{nickName(obj)}}</button>
+        </div>
+    </div>
+    
+    <div class="hello-user">
+        <div>
+            <h5>欢迎 会员</h5>
+        </div>
+    </div>
+
+    <div v-if="banner.length>0" class="news-demo-banner" v-on:touchend="bannerEnd('bEnd',$event)" v-on:touchstart="bannerStart('bStart',$event)" v-on:touchmove="bannerMove('bMove',$event)">
+        <ul v-bind:style="{'-webkit-transform':'translate('+bIndex*(-3.75)+'rem)'}">
+            <li v-if='obj' v-for="obj in banner"><a v-bind:href="[obj.news_outer_url?obj.news_outer_url:'/vote/PhoneDetail?id='+obj.news_id]"><img v-bind:src="obj.head_img_url" /><h5>{{obj.news_title}}</h5></a></li>
+        </ul>
+    </div>
+    <div class="news-demo-banner-index2">
+        <ul>
+            <li v-for="obj,i in banner" v-bind:class="[bIndex==i?'c':'']" v-bind:style="{'width':100/banner.length+'%'}"></li>
+        </ul>
+    </div>
+    <div style="display: none;" v-if="banner.length>0" class="news-demo-banner-index">
+        <ul>
+            <li v-for="obj,i in banner" v-bind:class="{'c':bIndex==i}" v-on:click="changeBanner(i)"></li>
+        </ul>
+    </div>
+    <div v-if="uIndex==0" class="news-demo-type">
+        <span v-bind:class="[uIndex2==0?'c':'']" v-on:click="changeTab2(0)">工会头条</span>
+        <span v-bind:class="[uIndex2==1?'c':'']" v-on:click="changeTab2(1)">工会动态</span>
+        <span v-bind:class="[uIndex2==2?'c':'']" v-on:click="changeTab2(2)">先模服务</span>
+    </div>
+     <ul v-if="!news || news.length==0" class="news-null-box" style="padding-top: 0.95rem;">
+        <li>
+            <dl>
+                <dt><img src="/images/union/nullbg.png" /></dt>
+                <dd>暂无新闻资讯</dd>
+            </dl>
+        </li>
+    </ul>
+    <div class="model-list" v-if="uIndex==0 && uIndex2==2">
+        <ul v-bind:style="{'-webkit-transform':'translateX('+modelY+'rem)'}">
+            <li v-for="obj,i in modelPhoto"><a v-bind:href="[obj.url]"><img v-bind:src="[obj.img]"/><span>{{obj.name}}</span></a></li>
+        </ul>  
+    </div>
+    <ul class="news-list-box" v-if="news && news.length!=0">
+        <li v-for="obj in news" v-bind:class="['news-list-'+coverCss(obj.head_img_url)]">
+            <a v-on:click="viewNumAdd(obj)"  v-bind:href="[obj.news_outer_url?obj.news_outer_url:'/vote/PhoneDetail?id='+obj.news_id]">
+                <h5 class="news-list-title">{{obj.news_title}}</h5>
+                <span class="news-list-num">
+                    <label>{{makeRead(obj.view_num,obj.news_id,obj.publish_time)}}阅读</label>
+                    <label>{{obj.comment_num}}评论</label>
+                </span>
+                <p v-if="obj.head_img_url && coverCss(obj.head_img_url)==3"><img v-bind:src="obj.head_img_url.split(',')[0]" /><img v-bind:src="obj.head_img_url.split(',')[1]" /><img v-bind:src="obj.head_img_url.split(',')[2]" /></p>
+                <img v-if="obj.head_img_url && coverCss(obj.head_img_url)==2" v-bind:src="obj.head_img_url.split(',')[0]" />
+            </a>
+        </li>
+
+    </ul>
+    <div class="m-select-box" v-if="select_box" v-on:touchstart='select_box=false'>
+        <div class="m-select">
+            <h5>选择工会</h5>
+            <ul v-on:touchstart="stopEvent('',$event)">
+                <li v-for="obj,i in childUnion" v-on:click="adminChangeUnion(obj)">{{obj.organize_name?obj.organize_name:obj.company_name}}</li>
+            </ul>
+        </div>
+    </div>
+</div>
+<script>
+    // window.onerror=function(e){
+    //     alert(e);
+    // }
+</script>
+<script style="display:none;">
+
+
+</script>
+<!-- <script src="/Scripts/jquery-1.10.2.js"></script>
+<script>
+    jQuery.ajax({
+        url:'http://cj.123zou.com/MobileNews/post_test?id=1',
+        type:'POST',
+        success:function(data){
+
+        }
+    });
+
+</script> -->
