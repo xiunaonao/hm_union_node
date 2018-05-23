@@ -45,5 +45,5 @@ window.linkTo=function(url){
 
 
 window.addEventListener("popstate",function(e){
-	console.log('历史纪录操作');
+	window.linkTo();
 });
