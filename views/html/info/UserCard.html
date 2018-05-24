@@ -1,0 +1,761 @@
+<title>我的</title>
+<style type="text/css">
+        html {
+            background-color: #F5F5F5;
+        }
+
+        .user_gh_head {
+            width: 30%;
+            height: 150px;
+            text-align: center;
+            line-height: 150px;
+            display: inline-block;
+            vertical-align: top;
+        }
+
+            .user_gh_head img {
+                vertical-align: middle;
+            }
+
+        .user_center {
+            display: inline-block;
+            height: 150px;
+            line-height: 110px;
+            width: 30%;
+        }
+
+        .user_look_gh {
+            display: inline-block;
+            height: 50px;
+            font-size: .16rem;
+            font-weight: bold;
+            color: #fff;
+            line-height: 50px;
+            width: 80%;
+            text-align: left;
+        }
+
+        .user_type {
+            display: inline-block;
+            height: 30px;
+            width: 30px;
+            position: absolute;
+            top: 40%;
+            right: 20%;
+            cursor: pointer;
+        }
+
+            .user_type img {
+                vertical-align: top;
+            }
+
+        .user_jf {
+            display: block;
+            color: #fff;
+            font-size: .12rem;
+            width: 100%;
+            line-height: 0px;
+            text-align: left;
+            margin-top: -10px;
+        }
+
+        .user_go_qd {
+            position: absolute;
+            width: 20%;
+            height: 100px;
+            top: 0;
+            right: 0%;
+            text-align: center;
+            cursor: pointer;
+        }
+
+        .user_body {
+            margin-bottom: 50px;
+        }
+
+        .user_zl_left {
+            display: inline-block;
+            vertical-align: top;
+            font-size: .14rem;
+        }
+
+        .user_ziliao {
+            height: 50px;
+            line-height: 50px;
+            margin: 0 3%;
+            background-color: #fff;
+            position: relative;
+            cursor: pointer;
+            border-bottom: 1px solid #eee;
+        }
+
+        .look_detail {
+            display: inline-block;
+            float: right;
+        }
+
+            .look_detail img {
+                vertical-align: middle;
+            }
+
+        .user_question h4 {
+            height: 35px;
+            line-height: 35px;
+            width: 100%;
+            padding: 0 3%;
+            text-align: left;
+            font-size: .12rem;
+            color: #999;
+        }
+
+        .UserCenter {
+            overflow: hidden;
+        }
+
+        .user_info {
+            display: inline-block;
+            float: right;
+            width: 26px;
+            height: 26px;
+            line-height: 26px;
+            font-size: .12rem;
+            text-align: center;
+            margin-right: 10px;
+            margin-top: 12px;
+            border-radius: 50%;
+            color: #fff;
+            background: #E43637;
+        }
+
+        .news_bottom {
+            position: fixed;
+            bottom: 0;
+            min-width: 320px;
+            max-width: 768px;
+            height: 40px;
+            width: 100%;
+            z-index: 99;
+            background: #e43637;
+            margin: 0 auto;
+        }
+
+        .news_bottom_list {
+            display: flex;
+        }
+
+            .news_bottom_list li {
+                flex: 1;
+                height: 40px;
+                line-height: 40px;
+                font-size: .12rem;
+                text-align: center;
+                cursor: pointer;
+            }
+
+            .news_bottom_list img {
+                width: 30px;
+                vertical-align: middle;
+                height: 30px;
+                display: inline-block;
+            }
+
+        .new_bottom_name {
+            width: .3rem;
+            height: 50px;
+            line-height: 0;
+            font-size: .14rem;
+            color: #fff;
+        }
+
+        .news_bottom_list .active {
+            background: #FA7171;
+        }
+
+        .member_status {
+            float: right;
+            margin-right: 10px;
+            height: 50px;
+            line-height: 50px;
+            font-size: .12rem;
+            color: #999;
+        }
+
+        .add_btn {
+            position: fixed;
+            bottom: 10%;
+            right: 5%;
+            z-index: 999;
+        }
+
+        .btn_list {
+            padding-bottom: 20px;
+            display: none;
+        }
+
+        .add_other_btn img {
+            transition: transform 0.5s linear 0s;
+        }
+
+        .btn_list li {
+            margin-bottom: 6px;
+        }
+
+        .add_other_btn {
+            text-align: center;
+            width: 60px;
+            cursor: pointer;
+        }
+
+        .go_sm {
+            position: fixed;
+            z-index: 9990;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            bottom: 150%;
+            transition: bottom 0.5s;
+        }
+
+        .gosm_bj {
+            display: inline-block;
+            z-index: 9990;
+            width: 100%;
+            height: 100%;
+            background-color: #000;
+            opacity: 0.5;
+            position: absolute;
+        }
+
+        .gosm_alert {
+            width: 70%;
+            position: absolute;
+            background: #fff;
+            z-index: 9999;
+            left: 15%;
+            top: 20%;
+            border-radius: 5px;
+        }
+
+        .gosm_head h4 {
+            height: 30px;
+            line-height: 30px;
+            text-align: center;
+            font-size: .14rem;
+            padding: 10px 0;
+            font-weight: bold;
+            letter-spacing: 1px;
+        }
+
+        .gosm_lj {
+            text-align: center;
+            margin-top: 20px;
+            padding-bottom: 20px;
+        }
+
+            .gosm_lj h4 {
+                height: 20px;
+                line-height: 20px;
+                font-size: .10rem;
+                text-align: center;
+                color: #999;
+                padding-bottom: 10px;
+            }
+
+        .gosm_btn {
+            display: inline-block;
+            height: 30px;
+            width: 50%;
+            text-align: center;
+            line-height: 30px;
+            font-size: .12rem;
+            background: #EF4141;
+            border-radius: 5px;
+        }
+
+            .gosm_btn a {
+                color: #fff;
+            }
+
+        .btn_list li a {
+            display: block;
+        }
+
+        .news_bottom_list li a {
+            display: block;
+        }
+
+        .ewm_text {
+            display: inline-block;
+            vertical-align: top;
+            font-size: .12rem;
+            color: #ccc;
+            float: right;
+            margin-right: 10px;
+        }
+
+        .ewm_success {
+            background: #585858;
+            width: 50%;
+            position: fixed;
+            bottom: 60px;
+            left: 25%;
+            height: 50px;
+            border-radius: 50px;
+            display: none;
+            z-index: 9990;
+        }
+
+        .ewmSuccess_text {
+            color: #fff;
+            font-size: .12rem;
+            height: 20px;
+            line-height: 20px;
+            text-align: center;
+        }
+
+            .ewmSuccess_text:first-child {
+                margin-top: 5px;
+            }
+
+            .ewmSuccess_text:last-child {
+                margin-bottom: 5px;
+            }
+
+        .user_alert {
+            position: fixed;
+            z-index: 999;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            bottom: 200%;
+            transition: bottom 0.5s;
+            max-width:750px;
+        }
+
+        .user_alert_bj {
+            display: inline-block;
+            z-index: 999;
+            width: 100%;
+            height: 100%;
+            background-color: #000;
+            opacity: 0.5;
+            position: absolute;
+        }
+
+        .user_alert_body {
+            position: absolute;
+            z-index: 1000;
+            width: 85%;
+            top: 5%;
+            left: 5%;
+            background:#fff;
+            border-radius:10px;
+            padding:0 10px;
+        }
+
+        .user_title {
+            padding: 5px 3%;
+            background: #fff;
+            margin-bottom: 10px;
+        }
+
+        .title_qh {
+            height: 30px;
+        }
+
+        .qh_bth {
+            display: inline-block;
+            height: 20px;
+            width: 20px;
+            border-radius: 50%;
+            float: right;
+            margin-top: 5px;
+            margin-left: 10px;
+        }
+
+        .btn3 {
+            background: #AAAAAA;
+        }
+
+        .btn2 {
+            background: #008BCB;
+        }
+
+        .btn1 {
+            background: #C9022F;
+        }
+
+        .userCard {
+            width: 100%;
+            height: 205px;
+            background: url("../images/info/red.png") no-repeat 0 0;
+            background-size: 100% 100%;
+            position: relative;
+            border-radius: 10px;
+        }
+        
+
+        .big_ewm {
+            position: absolute;
+            width: 40px;
+            height: 40px;
+            top: 20px;
+            right: 25px;
+        }
+
+            .big_ewm img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                vertical-align: top;
+            }
+
+        .cardNumber {
+            height: 20px;
+            line-height: 20px;
+            text-align: right;
+            position: absolute;
+            font-size: .14rem;
+            color: #fff;
+            bottom: 30px;
+            right: 15px;
+        }
+
+        .cardInfo {
+            height: 50px;
+            padding: 15px 0;
+            border-bottom: 1px solid #EEEEEE;
+        }
+
+        .userHead {
+            width: 50px;
+            height: 50px;
+            display: inline-block;
+            float: left;
+        }
+
+        .userCard_info {
+            height: 15px;
+            line-height: 15px;
+            font-size: .14rem;
+            float: right;
+            display: inline-block;
+            margin-top: 17.5px;
+        }
+
+        .userCard_detail {
+            float: right;
+            border-left: 1px solid #eee;
+            padding: 0 10px;
+        }
+
+        .userCompany {
+            height: 20px;
+            line-height: 20px;
+            padding: 15px 0;
+            font-size: .14rem;
+            text-align: left;
+        }
+
+        .userCompanyTitle {
+            display: inline-block;
+            vertical-align:top;
+        }
+
+        .userCompanyName {
+            display: inline-block;
+            width:73%;
+            overflow:hidden;
+            text-overflow:ellipsis;
+            white-space:nowrap;
+        }
+
+        .zl_1 {
+            background: #fff;
+        }
+
+        .user_ph {
+            background: #fff;
+            margin-top: 10px;
+        }
+
+        .ql_yw {
+            background: #fff;
+            margin-top: 10px;
+        }
+
+        ql_yw a {
+            display: block;
+        }
+
+        .user_title .status1 {
+            background: url("../images/info/red.png") no-repeat 0 0;
+            background-size: 100% 100%;
+        }
+
+        .user_title .status2 {
+            background: url("../images/info/blue.png") no-repeat 0 0;
+            background-size: 100% 100%;
+        }
+
+        .user_title .status3 {
+            background: url("../images/info/gray.png") no-repeat 0 0;
+            background-size: 100% 100%;
+        }
+        .user_alert_head{
+            height:50px;
+            margin-top:15px;
+        }
+        .user_ah_left{
+            float:left;
+            width:50px;
+            height:50px;
+        }
+        .user_ah_right{
+            float:left;
+            margin-left:15px;
+            width:75%;
+        }
+        .user_alert_name{
+            height:25px;
+            line-height:25px;
+            font-size:.14rem;
+        }
+        .user_alert_company{
+            line-height:20px;
+            font-size:.14rem;
+        }
+        .userAlert_card {
+            width:80%;
+            margin:0 auto;
+            margin-top:20px;
+        }
+        .userAlert_bottom{
+            font-size:.14rem;
+            margin-bottom:15px;
+            text-align:center
+        }
+        .user_ziliao a{
+            display:block;
+        }
+        .companyAlert {
+            position: fixed;
+            z-index: 999;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            bottom: 200%;
+            transition: bottom 0.5s;
+        }
+        .companyAlert_bj {
+            display: inline-block;
+            z-index: 999;
+            width: 100%;
+            height: 100%;
+            background-color: #000;
+            opacity: 0.5;
+            position: absolute;
+        }
+        .companyAlert_body {
+            position: absolute;
+            z-index: 1000;
+            width: 85%;
+            top: 5%;
+            left: 5%;
+            background: #fff;
+            border-radius: 10px;
+            padding:10px;
+            min-height:350px;
+        }
+        .companyTitle{
+            height:20px;
+            line-height:20px;
+            font-size:.12rem;
+            text-align:left
+        }
+        .companyCountent {
+            margin-top: 10px;
+            text-indent: 2em;
+            line-height: 20px;
+            font-size: .10rem;
+        }
+        .userCompanyName a{
+            display:block;
+        }
+        .dsh {
+            color: #F04848;
+        }
+
+    .info_alert{
+        display:none;
+        width:100%;
+        height:100%;
+        position:fixed;
+        top:0;
+        left:0;
+    }
+    .info_alert_bj {
+        display: inline-block;
+        z-index: 999;
+        width: 100%;
+        height: 100%;
+        background-color: #000;
+        opacity: 0.5;
+        position: absolute;
+    }
+    .info_main {
+        width: 72%;
+        position: relative;
+        top: 0.9rem;
+        left: 0;
+        right: 0;
+        margin: auto;
+        padding: 0.3rem 0.16rem 0.15rem;
+        z-index: 1000;
+        background: #ffffff;
+        border-radius: 0.1rem;
+    }
+    .info_close{
+        position:absolute;
+        top:0;
+        right:0.1rem;
+        line-height:1;
+        font-size:0.36rem;
+        font-family:'Microsoft YaHei';
+        font-weight:bolder;
+        color:#f32a2a;
+    }
+    .info_text {
+        font-size: 0.15rem;
+        font-family: 'Microsoft YaHei';
+        color: #323232;
+    }
+
+    </style>
+
+
+<div class="user_alert">
+    <span class="user_alert_bj" onclick="hidetwocode()" style="cursor:pointer;"></span>
+    <div class="user_alert_body" >
+        <div class="user_alert_head">
+            <div class="user_ah_left">
+                <img src="http://thirdwx.qlogo.cn/mmopen/vi_32/yI70cMQUgOLoPrr3wsg9qNaCTdevPBLk5be8Umgr49s7yFUtSnp7QUrP50icQGAcGW2MM8Kw2TFZ6FnqPiat1y1A/132" width="50" height="50" style="border-radius:50%;float:left; line-height: 0;" />
+            </div>
+            <div class="user_ah_right">
+                <div class="user_alert_name">@nick</div>
+                <p class="user_alert_company">@Html.Raw(company.Name)</p>
+            </div>
+        </div>
+        <div class="userAlert_card">
+            @if (!string.IsNullOrEmpty(qrcode))
+            {
+                <img src="@Html.Raw("http://union.123zou.com/qrcode/index?url=" + qrcode)" width="100%" />
+            }
+        </div>
+        <div class="userAlert_bottom">
+            @Html.Raw(member.MEMID > 1 ? member.MEMID.ToString() : "")
+        </div>
+    </div>
+</div>
+
+<div class="ewm_success">
+    <div class="ewmSuccess_text">您的专属二维码已发送</div>
+    <div class="ewmSuccess_text">请在微信公众号内查看</div>
+</div>
+
+<div class="usercard-box" id="app">
+    <div class="union-box" v-if="!is_zj">
+        <a href="/Info/structure">
+            <img src="/images/顶部通栏.png">
+            <button>进入</button>
+        </a>
+    </div>
+    <div class="logo clearfix">
+<!--         <div class="number">
+        NO.{{member.member_id}}
+    </div> -->
+        <div class="twe-code" style="cursor:pointer;" v-on:click="twocode()">
+
+        </div>
+
+        <img v-if="is_zj" class="logo-card" src="/images/worker/卡面@2x.png"/>
+        <img v-if="!is_zj" class="logo-card" src="/images/cxcard.jpeg"/>
+
+        <div class="logo_left" v-if="is_zj">
+            <div class="logo_info">
+                <span>{{member.real_name}}</span><span class="border_span">{{getSex()}}</span><span>{{getBirthday()}}</span><br /><br />
+                <span>所属企业：{{companyValid(member.source_organize_name?member.source_organize_name:member.organize_name)}}</span><br/>
+                <span class="logo-sh" v-if='member.check_status!=2'>(未审核)</span>
+                <span class="logo-sh" v-if="member.check_status==2">{{member.member_id}}</span>
+            </div>
+            <div class="logo_right" style="background-image:none;">
+                <img src="http://thirdwx.qlogo.cn/mmopen/vi_32/yI70cMQUgOLoPrr3wsg9qNaCTdevPBLk5be8Umgr49s7yFUtSnp7QUrP50icQGAcGW2MM8Kw2TFZ6FnqPiat1y1A/132"/>
+            </div>
+        </div>
+
+        <div class="logo_left logo_left2" v-if="!is_zj" style="position: relative;height:0.6rem;margin-top: 0.1rem;/*-webkit-transform:translateY(1.25rem);margin-bottom:0rem;*/">
+            <a v-bind:href="'#MemberInfo?id='+member.member_id" style="width:100%;height:0.4rem;background:url(/images/worker/请完善会员信息@2x.png) no-repeat center/1.6rem;display:block;"></a>
+            <span class="logo-sh-f" style="position:absolute;right:0.2rem;top:-.45rem;color:#fff;font-size:0.14rem;" v-if="member.check_status==2">{{member.member_id}}</span>
+            <span class="logo-sh-f" style="position:absolute;right:0.2rem;top:-.45rem;color:#fff;font-size:0.14rem;" v-if="member.check_status!=2">未审核</span>
+            <div class="logo_info" style="color: #333;left:0.05rem;bottom:inherit;position:relative;top:0.1rem;">
+                <span>{{member.real_name}}</span><span class="border_span">{{getSex()}}</span><span>{{getBirthday()}}</span><br /><br />
+                <span>所属企业：{{companyValid(member.source_organize_name?member.source_organize_name:member.organize_name)}}</span><br/>
+                <!-- <span class="logo-sh" v-if='member.check_status!=2'>(未审核)</span>
+                <span class="logo-sh" v-if="member.check_status==2">@Html.Raw(member.MEMID > 1 ? member.MEMID.ToString() : "")</span> -->
+            </div>
+            <div class="logo_right" style="background-image:none;right:0.05rem;position:relative;bottom:inherit;top:0.1rem;">
+                <img src="http://thirdwx.qlogo.cn/mmopen/vi_32/yI70cMQUgOLoPrr3wsg9qNaCTdevPBLk5be8Umgr49s7yFUtSnp7QUrP50icQGAcGW2MM8Kw2TFZ6FnqPiat1y1A/132"/>
+            </div>
+        </div>
+    </div>
+    <div class="content">
+        <div class="user-info-content" v-if="!is_zj">
+            <div class="user-info-box">
+                <div>
+                    <a href="/servicehall/signTwo">
+                    <img src="/images/签到@2x.png" />
+                    <span>签到</span>
+                        </a>
+                </div>
+                <div>
+                    <a href="javascript:;">
+                    <img src="/images/积分.png" />
+                    <span>积分</span>
+                    </a>
+                </div>
+                <div>
+                    <a href="javascript:;" onclick="zsewm()">
+                    <img src="/images/积分商城.png" />
+                    <span>积分商城</span>
+                        </a>
+                </div>
+                <div>
+                    <a href="/info/userduty?index=0">
+                    <img src="/images/权利义务@2x.png" />
+                    <span>权利与义务</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="info-title clearfix" v-bind:style="{'border-top':is_zj?'solid #EEE 0.01rem':''}">
+            <label>消息</label>
+            <img src="/images/%e6%9b%b4%e5%a4%9aicon@2x.png" />
+        </div>
+        <div class="info-list">
+            <ul>
+                <li v-on:click="readMsg(obj)" v-for="obj,i in msg"><span class="point_span" v-bind:style="{'background-color':obj.can_read?'':'#ff0000'}"></span><span>{{getShort(obj.msg_content)}}</span><span class="date_span"></span></li>
+<!--                 <li><span class="point_span" style="background-color:#ff0000;"></span><span>你已报名“工会鹊桥”,请时刻关注消息动态。</span><span class="date_span">04-04</span></li>
+                <li><span class="point_span"></span><span>你有34积分即将到期，请尽快兑换使用。</span><span class="date_span">04-02</span></li> -->
+            </ul>
+        </div>
+        <div class="info_alert">
+            <span class="info_alert_bj" onclick="hideInfo()"></span>
+            <div class="info_main">
+                <span class="info_close" onclick="hideInfo()">×</span>
+                <p class="info_text"></p>
+            </div>
+        </div>
+    </div>
+
+</div>

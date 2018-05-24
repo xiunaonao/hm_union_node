@@ -3,6 +3,16 @@ var routes=[
 		url:'news',
 		dom:'info/news',
 		script:'info/news.js'
+	},
+	{
+		url:'UserCard',
+		dom:'info/UserCard',
+		script:'info/usercard.js'
+	},
+	{
+		url:'MemberInfo/{id}',
+		dom:'vote/MemberInfo',
+		script:'vote/memberinfo.js'
 	}
 	
 ]
