@@ -42,10 +42,17 @@
     </body>
     <script src="/scripts/sys/router.js"></script>
     <script>
-        window.linkTo();
+        var hash=location.hash.replace('#','');
+        console.log(hash)
+        if(!sessionStorage.users){
+            var url='http://100596.un.123zou.com/info/node?return='+hash;
+            console.log(url)
+            location.href=url;
 
-        var xhr=new XMLHttpRequest();
-        xhr.open('GET','/api/getUser?')
+        }else{
+            window.linkTo();
+        }
+        
 
 
     </script>

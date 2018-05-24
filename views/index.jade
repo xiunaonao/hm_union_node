@@ -1,5 +1,7 @@
-extends layout
+script.
+	sessionStorage.token='#{token}';
+	sessionStorage.users='!{JSON.stringify(data.data)}';
+	location.href='/#{'#'+url}';
 
-block content
-  h1= title
-  p Welcome to #{title}
+	
+
