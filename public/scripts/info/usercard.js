@@ -48,7 +48,7 @@
             isUserCard:true,
             memberId: '1826164934900000376',
             msg:[],
-            is_zj:false
+            is_zj:true
         },
         mounted:function(){
             if(location.href.indexOf("100596")>-1){
@@ -64,7 +64,7 @@
                     }
                     this.member = data.data.data;
                     console.log('获取消息中');
-                    // this.showNoctie(this);
+                    this.showNoctie(this);
                 });
             },
             readMsg:function(obj){

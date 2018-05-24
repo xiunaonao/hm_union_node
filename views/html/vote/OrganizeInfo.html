@@ -1,0 +1,216 @@
+<title>工会信息</title>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+    }
+    li {
+        list-style: none;
+    }
+    a {
+        text-decoration: none;
+        color: #000000;
+    }
+    body, html {
+        width: 100%;
+        height: 100%;
+    }
+    .top_nav {
+        width: 3.75rem;
+        height: 0.44rem;
+        line-height: 0.44rem;
+        text-align: center;
+        border-bottom: 0.01rem solid #FFEEEE;
+    }
+    .top_nav .back {
+        position: absolute;
+        left: 0.1rem;
+        top: 0.15rem;
+        width: 0.09rem;
+        height: 0.15rem;
+        background-size: 100%;
+        display: inline-block;
+        background-image: url("/images/back@2x.png");
+    }
+
+    .info_content{
+        width:100%;
+    }
+    .top_img{
+        display:block;
+        width:100%;
+    }
+
+    .info_content table{
+        width:100%;
+    }
+    .info_list {
+        width: 100%;
+        float: left;
+        padding: 0.19rem 0;
+        margin: 0;
+        background-color: #ffffff; 
+        border-bottom: 1px solid #eeeeee;
+    }
+    .info_title{
+        float:left;
+        margin-left:0.16rem;
+        font-size:0.15rem;
+        font-family:'Microsoft YaHei';
+        color:#000000;
+    }
+    .info_text {
+        float:right;
+        width:65.6%;
+        font-size: 0.15rem;
+        font-family: 'Microsoft YaHei';
+        color: #000000;
+    }
+    .info_list input,
+    .info_list select {
+        float: right;
+        width: 65.6%;
+        border: none;
+        font-size: 0.15rem;
+        font-family: 'Microsoft YaHei';
+        color: #000000;
+    }
+    .info_list input:focus,
+    .info_list select:focus {
+        outline: none;
+    }
+
+    .submit_org {
+        display:block;
+        width: 2rem;
+        margin: 0.4rem auto 0.2rem;
+        padding: 0.18rem 0;
+        background-color: #EF4141;
+        border-radius:0.25rem;
+        text-align: center;
+        font-size: 0.15rem;
+        font-family: 'Microsoft YaHei';
+        color: #ffffff;
+        cursor:pointer;
+    }
+
+    .subnit_ok{
+        display:none;
+        width:100%;
+    }
+    .ok_img {
+        display:block;
+        width:1rem;
+        height:1rem;
+        margin:1.75rem auto 0.32rem;
+    }
+    .ok_p {
+        text-align:center;
+        font-size:0.2rem;
+        font-family:'Microsoft YaHei';
+        color:#aaaaaa;
+    }
+
+    .alert_msg {
+        display: none;
+        width: 40%;
+        padding: 0.18rem 0;
+        position: fixed;
+        top: 36%;
+        left: 0;
+        right: 0;
+        margin: auto;
+        background-color: black;
+        border-radius: 3px;
+        opacity: 0.5;
+        line-height: 1.2;
+        text-align: center;
+        font-size: 0.18rem;
+        color: #fff;
+    }
+    .alert_msg p{
+        padding:0 0.1rem;
+        word-wrap: break-word;
+        word-break: normal;
+    }
+    
+
+</style>
+<div class="OrganizeInfo">
+    <div class="top_nav">
+        <div class="back" onclick="history.go(-1);"></div>
+    </div>
+
+    <div class="info_content">
+        <img class="top_img" src="/images/完善工会信息.png" alt="" />
+        <table>
+            <tr>
+                <td>
+                    <div class="info_list">
+                        <span class="info_title">上级工会</span>
+                        <!--<input type="text" name="up_org" value="长兴县总工会" />-->
+                        <span class="info_text info_up"></span>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <div class="info_list">
+                        <span class="info_title">工会名称</span>
+                        <!--<input type="text" name="org_name" value="县直机关工会" />-->
+                        <span class="info_text info_name"></span>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <div class="info_list">
+                        <span class="info_title">工会类型</span>
+                        <select class="org_type">
+                            <option value="0">类型</option>
+                            <option value="1">管理节点</option>
+                            <option value="100">基层以上工会</option>
+                            <option value="201">单独基层工会</option>
+                            <option value="202">联合基层工会</option>
+                            <option value="300">分会/小组</option>
+                        </select>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <div class="info_list">
+                        <span class="info_title">工会负责人</span>
+                        <input class="org_leader" type="text" name="org_leader" value="" placeholder="请输入工会负责人姓名" />
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <div class="info_list">
+                        <span class="info_title">建会时间</span>
+                        <input class="org_start" type="text" name="org_start" value="" placeholder="例：1991-01-01" />
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <div class="info_list">
+                        <span class="info_title">工会电话</span>
+                        <input class="org_phone" type="text" name="org_phone" value="" placeholder="请输入工会电话" />
+                    </div>
+                </td>
+            </tr>
+        </table>
+        <a class="submit_org" href="#">提交</a>
+    </div>
+</div>
+
+<div class="subnit_ok">
+    <img class="ok_img" src="~/images/成功.png" alt="" />
+    <p class="ok_p">工会信息已完善</p>
+</div>
+
+<div class="alert_msg">
+    <p></p>
+</div>

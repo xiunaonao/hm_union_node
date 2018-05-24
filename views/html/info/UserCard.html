@@ -634,29 +634,7 @@
     </style>
 
 
-<div class="user_alert">
-    <span class="user_alert_bj" onclick="hidetwocode()" style="cursor:pointer;"></span>
-    <div class="user_alert_body" >
-        <div class="user_alert_head">
-            <div class="user_ah_left">
-                <img src="http://thirdwx.qlogo.cn/mmopen/vi_32/yI70cMQUgOLoPrr3wsg9qNaCTdevPBLk5be8Umgr49s7yFUtSnp7QUrP50icQGAcGW2MM8Kw2TFZ6FnqPiat1y1A/132" width="50" height="50" style="border-radius:50%;float:left; line-height: 0;" />
-            </div>
-            <div class="user_ah_right">
-                <div class="user_alert_name">@nick</div>
-                <p class="user_alert_company">@Html.Raw(company.Name)</p>
-            </div>
-        </div>
-        <div class="userAlert_card">
-            @if (!string.IsNullOrEmpty(qrcode))
-            {
-                <img src="@Html.Raw("http://union.123zou.com/qrcode/index?url=" + qrcode)" width="100%" />
-            }
-        </div>
-        <div class="userAlert_bottom">
-            @Html.Raw(member.MEMID > 1 ? member.MEMID.ToString() : "")
-        </div>
-    </div>
-</div>
+
 
 <div class="ewm_success">
     <div class="ewmSuccess_text">您的专属二维码已发送</div>
@@ -664,6 +642,30 @@
 </div>
 
 <div class="usercard-box" id="app">
+    <div class="user_alert">
+    <span class="user_alert_bj" onclick="hidetwocode()" style="cursor:pointer;"></span>
+    <div class="user_alert_body" >
+        <div class="user_alert_head">
+            <div class="user_ah_left">
+                <img src="http://thirdwx.qlogo.cn/mmopen/vi_32/yI70cMQUgOLoPrr3wsg9qNaCTdevPBLk5be8Umgr49s7yFUtSnp7QUrP50icQGAcGW2MM8Kw2TFZ6FnqPiat1y1A/132" width="50" height="50" style="border-radius:50%;float:left; line-height: 0;" />
+            </div>
+            <div class="user_ah_right">
+                <div class="user_alert_name">{{member.real_name}}</div>
+                <p class="user_alert_company">{{companyValid(member.source_organize_name?member.source_organize_name:member.organize_name)}}</p>
+            </div>
+        </div>
+        <div class="userAlert_card">
+            <!-- @if (!string.IsNullOrEmpty(qrcode))
+            {
+                <img src="@Html.Raw("http://union.123zou.com/qrcode/index?url=" + qrcode)" width="100%" />
+            } -->
+        </div>
+        <div class="userAlert_bottom">
+            @Html.Raw(member.MEMID > 1 ? member.MEMID.ToString() : "")
+        </div>
+    </div>
+</div>
+
     <div class="union-box" v-if="!is_zj">
         <a href="/Info/structure">
             <img src="/images/顶部通栏.png">
@@ -681,7 +683,7 @@
         <img v-if="is_zj" class="logo-card" src="/images/worker/卡面@2x.png"/>
         <img v-if="!is_zj" class="logo-card" src="/images/cxcard.jpeg"/>
 
-        <div class="logo_left" v-if="is_zj">
+        <div class="logo_left" v-if="!is_zj">
             <div class="logo_info">
                 <span>{{member.real_name}}</span><span class="border_span">{{getSex()}}</span><span>{{getBirthday()}}</span><br /><br />
                 <span>所属企业：{{companyValid(member.source_organize_name?member.source_organize_name:member.organize_name)}}</span><br/>
@@ -693,8 +695,8 @@
             </div>
         </div>
 
-        <div class="logo_left logo_left2" v-if="!is_zj" style="position: relative;height:0.6rem;margin-top: 0.1rem;/*-webkit-transform:translateY(1.25rem);margin-bottom:0rem;*/">
-            <a v-bind:href="'#MemberInfo?id='+member.member_id" style="width:100%;height:0.4rem;background:url(/images/worker/请完善会员信息@2x.png) no-repeat center/1.6rem;display:block;"></a>
+        <div class="logo_left logo_left2" v-if="is_zj" style="position: relative;height:0.6rem;margin-top: 0.1rem;/*-webkit-transform:translateY(1.25rem);margin-bottom:0rem;*/">
+            <a v-bind:href="'#MemberInfo/'+member.member_id" style="width:100%;height:0.4rem;background:url(/images/worker/请完善会员信息@2x.png) no-repeat center/1.6rem;display:block;"></a>
             <span class="logo-sh-f" style="position:absolute;right:0.2rem;top:-.45rem;color:#fff;font-size:0.14rem;" v-if="member.check_status==2">{{member.member_id}}</span>
             <span class="logo-sh-f" style="position:absolute;right:0.2rem;top:-.45rem;color:#fff;font-size:0.14rem;" v-if="member.check_status!=2">未审核</span>
             <div class="logo_info" style="color: #333;left:0.05rem;bottom:inherit;position:relative;top:0.1rem;">

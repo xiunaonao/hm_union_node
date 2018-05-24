@@ -1,0 +1,91 @@
+<title>页面编辑器</title>
+<style>
+*{margin:0;padding: 0;outline:none;-webkit-appearance:none;max-width:100%;}
+html{width:100%;height:100%;overflow: hidden;}
+body{width:100%;height:100%;-webkit-overflow-scrolling:touch;}
+.editor-title{width:6rem;margin:0.2rem;min-height:0.48rem;}
+.editor-title div{width:100%;min-height:0.48rem;border:none rgba(0,0,0,0) 0rem;text-align:left;font-size:0.36rem;font-weight:600;line-height:0.48rem;}
+.editor-date{font-size:0.24rem;color:#999;margin:0.2rem;}
+.editor-title-none{color:#999;}
+.editor-title-none:before{content:"请输入文章标题";}
+.editor-box{height:auto;font-size:0.28rem;padding-bottom:1rem;min-height: 3rem;min-height: 5rem;margin:0 0.2rem;}
+.editor-box img{width:100%;margin-left:0%;}
+.editor-box-none{color:#999;}
+.editor-box-none:before{content:"基于微信端格式限制，暂不支持文档、视频等文件上传，麻烦用图文形式描述，敬请谅解！";}
+.editor-date input{border:none;background: none;margin-right: 0.2rem;font-size: 0.24rem;}
+/*
+.editor-img{position:fixed;right:0.1rem;bottom:2.1rem;width:0.88rem;height:0.88rem;background: url(/images/pe_image.png?v=1) center/0.88rem no-repeat;border:0 solid #CCC;border-radius:0!important;}
+.editor-img-2{position:fixed;right:0.1rem;bottom:2.1rem;width:0.88rem;height:0.88rem;border:0.01rem solid #CCC;opacity:0;}
+.editor-save{position:fixed;right:0.1rem;bottom:1.1rem;width:0.88rem;height:0.88rem;background: url(/images/pe_save.png?v=1) center/0.88rem no-repeat;border:0 solid #CCC;border-radius:0!important;}
+.editor-url{position:fixed;right:0.1rem;bottom:0.1rem;width:0.88rem;height:0.88rem;background: url(/images/pe_url.png?v=1) center/0.88rem no-repeat;border:0 solid #CCC;border-radius:0!important;}
+*/
+.editor-message{border-top:#eeeeee 0.2rem solid;padding-bottom:0.9rem;}
+.editor-message p{height:0.5rem;line-height:0.5rem;}
+.editor-message p span{color:#666;font-size:0.2rem;float:right;}
+.editor-message p span:first-child{float:left;}
+.editor-message label{color:#323232;font-size:0.25rem;background:rgba(0,0,0,0);display:block;text-align: left;}
+.editor-message li{ display: block;border-top:#CCC solid 0.01rem;margin:0 0.3rem;padding:0.2rem 0;text-align:center;font-size:0.16rem;color:#CCC;}
+.editor-message li:first-child{border-top:none;}
+.editor-message-post{position:fixed;bottom:0;width:100%;height:0.8rem;border-top:0.01rem solid #CCC;background:#FFF;}
+.editor-message-post input{float:left;height:0.55rem;margin:0.1rem;box-sizing:border-box;}
+.editor-message-post .editor-message-txt{width:4.8rem;border:0.01rem #CCC solid;border-radius:0.1rem;text-indent:0.1rem;}
+.editor-message-post .editor-message-btn{width:1.1rem;border:0.01rem #CCC solid;border-radius:0.1rem;background:#FFF;}
+
+.editor-delete{background: rgba(0,0,0,0);display: none;color: red;}
+
+/*改版*/
+.editor-button{position:fixed;bottom:0;left:0;height:1rem;width:100%;border-top:solid #ccc 0.02rem;background: #FFF;}
+.editor-button input{margin:0.25rem 0;float:left;width:33.3%;font-size:0.2rem;color:#323232;text-align:center;text-indent:0.5rem;height:0.5rem;background:rgba(0,0,0,0) url(/images/pe_img_btn.png) 0.55rem center/0.4rem no-repeat;box-sizing:border-box;border:none 0rem rgba(0,0,0,0);}
+.editor-button .editor-img{background-image:url(/images/pe_img_btn.png);border-right:0.02rem solid #CCC;}
+.editor-button .editor-img-2{position:absolute;opacity:0;left:33.3%;}
+.editor-button .editor-save{background-image:url(/images/pe_post_btn.png);}
+.editor-button .editor-url{background-image:url(/images/pe_url_btn.png);border-right:0.02rem solid #CCC;}
+
+
+.editor-post-category{display:none;height:4.6rem;position:fixed;left:50%;top:50%;-webkit-transform:translate(-50%,-50%);width:5rem;background:#555555;color:#FFF;box-sizing:border-box;padding:0.5rem;}
+.editor-post-category h1{font-size:0.3rem;}
+.editor-post-category ul{height:1.8rem;margin-top:0.5rem;}
+.editor-post-category li{list-style: none;font-size:0.26rem;width:1.8rem;height:0.6rem;float:left;}
+.editor-post-category li input{background:url(/images/check.png) 0/0.3rem rgba(0,0,0,0);width:0.3rem;height:0.3rem;border:none;float:left;margin-top: 0.05rem;margin-right:0.2rem;}
+.editor-post-category .lic input{background-image:url(/images/checkNow.png);}
+.editor-post-category li:nth-child(2n){margin-left:0.4rem;}
+.editor-post-category p input{float: left;width:1.8rem;height:0.7rem;font-size:0.3rem;color:#FFF;background:#FFFFFF;color:#b5b5b5;border:none;}
+.editor-post-category p input:first-child{background:#ef4141;color:#FFFFFF;margin-right:0.4rem;}	
+</style>
+<div class="editor-title">
+    <div class="editor-title-none" placeholder="" contenteditable="true"></div>
+</div>
+<div class="editor-date">
+    <span class="editor-date-now"></span>&nbsp;<input class="editor-author" readonly="readonly" type="text" placeholder="" value=""/>
+</div>
+<div class="editor-box editor-box-none" contenteditable="true">
+
+</div>
+
+<div class="editor-button">
+    <input type="button" value="链接" class="editor-url" style="display: block;" />
+    <input type="button" value="图片" class="editor-img"  />
+    <input type="file" value="" id="uploadBtn" class="editor-img-2" />
+    <input type="button" value="发布" class="editor-save" />
+</div>
+    
+    <div class="editor-post-category">
+        <h1>文章类型:</h1>
+        <ul>
+            <li><input type="button" data-id="1"/>工会头条</li>
+            <li><input type="button" data-id="2" />工作动态</li>
+            <li><input type="button" data-id="3" />职工风采</li>
+            <!-- <li><input type="button" data-id="1" />近期活动</li>
+            <li><input type="button" data-id="1" />文体活动</li>
+            <li><input type="button" data-id="1"/>评选活动</li>
+            <li><input type="button" data-id="1" />招聘信息</li> -->
+            <li><input type="button" data-id="6" />劳模服务</li>
+            <li><input type="button" data-id="7" />普惠服务</li>
+            <li></li>
+        </ul>
+        <p><input class="post-btn-confirm" type="button" value="发布" /><input class="post-btn-cancel" type="button" value="取消" /></p>
+    </div>
+    
+    <div class="alert-showbox">
+
+</div>

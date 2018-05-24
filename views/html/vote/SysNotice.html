@@ -1,0 +1,50 @@
+<title>系统通知</title>
+<style>
+	*{margin:0;padding:0;}
+	textarea,button,input[type=text]{-webkit-appearance:none;}
+	body{background:#F5F5F5;}
+	section{background:#FFFFFF;}
+	article p{height:auto;}
+	article p input,article p textarea{width:3.45rem;height:0.55rem;border:none;border-bottom:solid #CCC 0.01rem;border-radius:0rem;text-indent:0;box-sizing:border-box;display: block;margin: 0rem auto;font-size:0.15rem;outline: none;}
+	article p textarea{height:2.95rem;resize:none;line-height:0.3rem;padding:0.2rem 0.15rem;width: 3.75rem;}
+	article p button{width:1.3rem;height:0.5rem;border:none #CCC 0rem;border-radius:0.05rem;text-align:center;box-sizing: border-box;display: block;
+		margin: 0.23rem auto 0rem auto;background:#E65A5A;font-size:0.15rem;color:#FFF;}
+	article h5{font-size:0.16rem;text-align:center;line-height:0.44rem;border-bottom:0.01rem solid #CCC;position:relative;
+		height:0.44rem;font-weight:100;font-size:0.15rem;}
+	article h5 a{position:absolute;left:0.15rem;top:0.14rem;width:0.09rem;height:0.15rem;font-size:0.15rem;background:url(/images/user/return_game.png) 0/0.09rem 0.15rem no-repeat;}
+	article h4{text-align:left;font-size:0.13rem;line-height:0.5rem;width:3.45rem;margin:0 auto;height:0.5rem;}
+	article h4>*{float:left;}
+	article h4>input{margin-top:0.16rem;margin-right:0.1rem;width:0.15rem;height:0.15rem;border:solid 1px #CCC;}
+	aside{display:none;line-height:0.5rem;text-align:center;color:#FFF;bottom:2.5rem;position:absolute;font-size:0.15rem;width:100%;}
+	aside span{display:block;margin:0 auto;width:1.5rem;height:0.5rem;border-radius:0.1rem;background:rgba(0,0,0,0.5);}
+</style>
+<article>
+	<section>
+		<h5><a href="javascript:history.back(-1)"></a>系统通知</h5>
+		<p>
+			<input id="msg_title" type="text" placeholder="通知标题">
+		</p>
+		<p>
+			<input id="msg_url" type="text" placeholder="跳转链接（没有可不填）">
+		</p>
+		<p>
+			<textarea id="msg_content" placeholder="通知内容"></textarea>
+		</p>
+	<!-- 	<p>
+			<select id="msg_type"></select>>
+		</p> -->
+		
+		
+	</section>
+		<h4>
+			<input id="can_notify" type="checkbox">推送到微信客户端
+		</h4>
+		<p>
+			<button id="sendSystemInfo">发布通知</button>
+		</p>
+</article>
+
+<aside id="sysTip">
+	<span>系统通知已发送</span>
+	
+</aside>

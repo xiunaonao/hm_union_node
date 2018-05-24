@@ -1,0 +1,320 @@
+<title>单位信息</title>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+    }
+
+    li {
+        list-style: none;
+    }
+
+    a {
+        text-decoration: none;
+        color: #000000;
+    }
+
+    body, html {
+        width: 100%;
+        height: 100%;
+    }
+
+    .MemberInfo {
+        width: 100%;
+        background-color: #F5F5F5;
+    }
+
+    .top_nav {
+        width: 3.75rem;
+        height: 0.44rem;
+        line-height: 0.44rem;
+        text-align: center;
+        border-bottom: 0.01rem solid #FFEEEE;
+        background-color: #ffffff;
+    }
+
+        .top_nav .back {
+            position: absolute;
+            left: 0.1rem;
+            top: 0.15rem;
+            width: 0.09rem;
+            height: 0.15rem;
+            background-size: 100%;
+            display: inline-block;
+            background-image: url("/images/back@2x.png");
+        }
+
+    .info_content {
+        width: 100%;
+        padding-bottom: 0.2rem;
+    }
+
+    .top_img {
+        display: block;
+        width: 100%;
+    }
+
+    .info_content table {
+        width: 100%;
+    }
+
+    .info_list {
+        width: 100%;
+        float: left;
+        margin: 0;
+        padding: 0.19rem 0;
+        border-bottom: 1px solid #eeeeee;
+        background-color: #ffffff;
+    }
+
+    .info_title {
+        float: left;
+        margin-left: 0.16rem;
+        font-size: 0.15rem;
+        font-family: 'Microsoft YaHei';
+        color: #000000;
+    }
+
+    .info_text {
+        float: right;
+        width: 65.6%;
+        font-size: 0.15rem;
+        font-family: 'Microsoft YaHei';
+        color: #000000;
+    }
+
+    .info_list > input,
+    .info_list > select {
+        float: right;
+        width: 65.6%;
+        border: none;
+        font-size: 0.15rem;
+        font-family: 'Microsoft YaHei';
+        color: #000000;
+    }
+
+        .info_list > input:focus,
+        .info_list > select:focus {
+            outline: none;
+        }
+
+    .info_list .sex {
+        float: right;
+        width: 65.6%;
+        border: none;
+    }
+
+        .info_list .sex label {
+            float: left;
+            margin-right: 0.36rem;
+            font-size: 0.15rem;
+            font-family: 'Microsoft YaHei';
+            color: #000000;
+        }
+
+        .info_list .sex input {
+            float: left;
+            margin-right: 0.1rem;
+            font-size: 0.15rem;
+            font-family: 'Microsoft YaHei';
+            color: #000000;
+        }
+
+    .submit_org {
+        display: block;
+        width: 2rem;
+        margin: 0.4rem auto 0;
+        padding: 0.18rem 0;
+        background-color: #EF4141;
+        border-radius: 0.25rem;
+        text-align: center;
+        font-size: 0.15rem;
+        font-family: 'Microsoft YaHei';
+        color: #ffffff;
+        cursor: pointer;
+    }
+
+    .submit_ok {
+        display: none;
+        width: 100%;
+    }
+
+    .ok_img {
+        display: block;
+        width: 1rem;
+        height: 1rem;
+        margin: 1.75rem auto 0.32rem;
+    }
+
+    .ok_p {
+        text-align: center;
+        font-size: 0.2rem;
+        font-family: 'Microsoft YaHei';
+        color: #aaaaaa;
+    }
+
+    .alert_msg {
+        display: none;
+        width: 40%;
+        padding: 0.18rem 0;
+        position: fixed;
+        top: 36%;
+        left: 0;
+        right: 0;
+        margin: auto;
+        background-color: black;
+        border-radius: 3px;
+        opacity: 0.5;
+        line-height: 1.2;
+        text-align: center;
+        font-size: 0.18rem;
+        color: #fff;
+    }
+
+        .alert_msg p {
+            padding: 0 0.1rem;
+            word-wrap: break-word;
+            word-break: normal;
+        }
+</style>
+<div class="UnitInfo">
+    <div class="top_nav">
+        <div class="back" onclick="history.go(-1);"></div>
+    </div>
+
+    <div class="info_content">
+        <img class="top_img" src="/images/完善单位信息.jpg" alt="" />
+        <table>
+            <tr>
+                <td>
+                    <div class="info_list">
+                        <span class="info_title">所属工会</span>
+                        <span class="info_text unit_up"></span>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <div class="info_list">
+                        <span class="info_title">单位名称</span>
+                        <input class="unit_name" type="text" value="" placeholder="请输入单位名称" />
+                    </div>
+                </td>
+            </tr>
+
+            <tr>
+                <td>
+                    <div class="info_list">
+                        <span class="info_title">经济类型</span>
+                        <select class="unit_type">
+                            <option value="0">请选择经济类型</option>
+                            <option value="10">内资</option>
+                            <option value="11">国有全资</option>
+                            <option value="12">集体全资</option>
+                            <option value="13">股份合作</option>
+                            <option value="14">联营</option>
+                            <option value="15">有限责任公司</option>
+                            <option value="16">股份有限公司</option>
+                            <option value="17">私有</option>
+                            <option value="19">其他内资</option>
+                            <option value="20">港澳台投资</option>
+                            <option value="21">内地和港澳台合资</option>
+                            <option value="22">内地和港澳台合作</option>
+                            <option value="23">港澳台独资</option>
+                            <option value="24">港澳台投资股份有限公司</option>
+                            <option value="29">其他港澳台投资</option>
+                            <option value="30">国外投资</option>
+                            <option value="31">中外合资</option>
+                            <option value="32">中外合作</option>
+                            <option value="33">外资</option>
+                            <option value="34">国外投资股份有限公司</option>
+                            <option value="39">其他国外投资</option>
+                            <option value="90">其他</option>
+                        </select>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <div class="info_list">
+                        <span class="info_title">单位所属行业</span>
+                        <select class="unit_industry">
+                            <option value="0">请选择单位所属行业</option>
+                            <option value="1">农、林、牧、渔业</option>
+                            <option value="2">采矿业</option>
+                            <option value="3">制造业</option>
+                            <option value="4">电力、燃气及水的生产和供应业</option>
+                            <option value="5">建筑业</option>
+                            <option value="6">交通运输、仓储及邮政业</option>
+                            <option value="7">信息传输、计算机服务和软件业</option>
+                            <option value="8">批发和零售业</option>
+                            <option value="9">住宿和餐饮业</option>
+                            <option value="10">金融业</option>
+                            <option value="11">房地产业</option>
+                            <option value="12">租赁和商业服务业</option>
+                            <option value="13">科学研究、技术服务和地质勘查业</option>
+                            <option value="14">水利、环境和公共设施管理业</option>
+                            <option value="15">居民服务和其他服务业</option>
+                            <option value="16">教育</option>
+                            <option value="17">卫生、社会保障和社会福利业</option>
+                            <option value="18">文化、体育和娱乐业</option>
+                            <option value="19">公共管理和社会组织</option>
+                            <option value="20">国际组织</option>
+                        </select>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <div class="info_list">
+                        <span class="info_title">单位性质类别</span>
+                        <select class="unit_category">
+                            <option value="0">请选择单位性质类别</option>
+                            <option value="1">机关</option>
+                            <option value="4">事业单位</option>
+                            <option value="5">企业</option>
+                            <option value="6">社会团体</option>
+                            <option value="7">军队</option>
+                            <option value="8">宗教团体</option>
+                            <option value="9">其他单位</option>
+                        </select>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <div class="info_list">
+                        <span class="info_title">组织机构代码</span>
+                        <input class="unit_code" type="text" value="" placeholder="请输入组织机构代码" />
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <div class="info_list">
+                        <span class="info_title">地址</span>
+                        <input class="unit_address" type="text" value="" placeholder="请输入单位地址" />
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <div class="info_list">
+                        <span class="info_title">单位所在政区</span>
+                        <input class="unit_area" type="text" value="" placeholder="请输入单位所在政区" />
+                    </div>
+                </td>
+            </tr>
+        </table>
+        <a class="submit_org" href="#">提交</a>
+    </div>
+</div>
+
+<div class="submit_ok">
+    <img class="ok_img" src="~/images/unit_ok.png" alt="" />
+    <p class="ok_p">单位信息已完善</p>
+</div>
+
+<div class="alert_msg">
+    <p></p>
+</div>
