@@ -151,7 +151,7 @@ button{outline:none;}
 .classies_detaile1 { position: absolute; left: 0.1rem; top: 2.1rem; font-size: 0.11rem; }
 
 .info-title{padding:0 0.15rem;height:0.44rem;background:#FFF;line-height:0.44rem;}
-.info-title label{font-size:0.15rem;text-indent:0.1rem;display:inline-block;border-left:0.03rem #EF4141 solid;height:0.15rem;line-height:0.15rem;}
+.info-title label{font-size:0.15rem;text-indent:0.1rem;display:inline-block;border-left:0.03rem #EF4141 solid;height:0.15rem;line-height:1;margin-top: 0.15rem;}
 .info-title img{float:right;height:0.15rem;margin-top:0.15rem;}
 /*修改*/
 .info-list { padding:0.15rem 0; margin-left:0.15rem; border-left:0.01rem solid #EEE;padding-bottom:0.5rem;}
