@@ -26,10 +26,13 @@ window.linkTo=function(url){
 
 	function getData(obj){
 		var param=obj.url.split('/');
+		var hashs=hash.split('/');
 		var paramObj={};
 		for(var i=0;i<paramObj.length;i++){
 			if(i==0)
 				continue;
+			paramObj[param[i].replace('{','').replace('}','')]=hashs.length>(i+1)?hashs[i]:'';
+			sessionStorage.param=JSON.stringify(paramObj);
 		}
 
 		if(paran[0]==hash){
