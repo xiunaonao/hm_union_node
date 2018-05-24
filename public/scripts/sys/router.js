@@ -35,7 +35,7 @@ window.linkTo=function(url){
 				paramObj[param[i].replace('{','').replace('}','')]=hashs.length>(i)?hashs[i]:'';
 				console.log(param[i].replace('{','').replace('}','')+' = '+ (hashs.length>(i)?hashs[i]:''))
 			}
-			sessionStorage.param=JSON.stringify(paramObj);
+			window._param=(paramObj);
 
 
 
