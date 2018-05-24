@@ -16,7 +16,7 @@
             isCool: true,
             isAdmin:false,
             select_box:false,
-            memberId:'1826566334700001531',
+            //memberId:'1826566334700001531',
             bannerTouch:false,
             touchUnion:{name:''},
             bannerPos:{x:0,y:0},
@@ -253,21 +253,26 @@
                 this.bIndex=index;
             },
             bindUser:function(callback,admin_bind){
+                var userData=JSON.parse(sessionStorage.users);
+                if(admin_bind){ 
+                    userData.organize_full_names=admin_bind.organize_full_names;
+                    userData.data.data.organize_full_idx=admin_bind.organize_full_idx;
+                }
+                callback(userData);
 
 
+                // var userUrl='http://cj.123zou.com/MobileNews/get_member_info?member_id='+this.memberId;
+                // this.$http.get(userUrl).then(function(data){
+                //     if(typeof data.data == 'string'){
+                //         data.data=JSON.parse(data.data);
+                //     }
+                //     if(admin_bind && data.data.data){
+                //         data.data.data.organize_full_names=admin_bind.organize_full_names;
+                //         data.data.data.organize_full_idx=admin_bind.organize_full_idx;
+                //     }
 
-                var userUrl='http://cj.123zou.com/MobileNews/get_member_info?member_id='+this.memberId;
-                this.$http.get(userUrl).then(function(data){
-                    if(typeof data.data == 'string'){
-                        data.data=JSON.parse(data.data);
-                    }
-                    if(admin_bind && data.data.data){
-                        data.data.data.organize_full_names=admin_bind.organize_full_names;
-                        data.data.data.organize_full_idx=admin_bind.organize_full_idx;
-                    }
-
-                    callback(data.data.data);
-                });
+                //     callback(data.data.data);
+                // });
             },
             bindBanner:function(){
                 var t=this;
