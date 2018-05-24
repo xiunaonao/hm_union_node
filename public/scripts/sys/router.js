@@ -27,15 +27,18 @@ window.linkTo=function(url){
 	function getData(obj){
 		var param=obj.url.split('/');
 		var hashs=hash.split('/');
-		var paramObj={};
-		for(var i=0;i<paramObj.length;i++){
-			if(i==0)
-				continue;
-			paramObj[param[i].replace('{','').replace('}','')]=hashs.length>(i+1)?hashs[i]:'';
+		if('#'+param[0]==hashs[0]){
+			var paramObj={};
+			for(var i=0;i<param.length;i++){
+				if(i==0)
+					continue;
+				paramObj[param[i].replace('{','').replace('}','')]=hashs.length>(i)?hashs[i]:'';
+				console.log(param[i].replace('{','').replace('}','')+' = '+ (hashs.length>(i)?hashs[i]:''))
+			}
 			sessionStorage.param=JSON.stringify(paramObj);
-		}
 
-		if(paran[0]==hash){
+
+
 			var xhr= new XMLHttpRequest();
 			xhr.open('GET',obj.dom+'.html',true);
 			xhr.send(null);
