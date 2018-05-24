@@ -13,7 +13,7 @@ router.get('/getUser', (req, res, next)=>{
   var crypted = new Buffer(token, 'base64').toString('binary');
 
   var decipher = crypto.createDecipheriv('aes-128-cbc', key, iv);
-  (decipher)
+  console.log(decipher)
   var decoded = decipher.update(crypted, 'binary', 'utf8');
   decoded += decipher.final('utf8');
   console.log(decoded);
