@@ -48,7 +48,7 @@
             isUserCard:true,
             memberId: '1826164934900000376',
             msg:[],
-            is_zj:true
+            is_zj:false
         },
         mounted:function(){
             if(location.href.indexOf("100596")>-1){

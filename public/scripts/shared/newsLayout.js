@@ -9,10 +9,10 @@ function changeIco(ind) {
                 isOpen:false,
                 memberId:'1826164934900000376',
                 notReadNum:0,
-                isAdmin:true,
+                isAdmin:false,
                 member:{real_name:''},
                 notice:[],
-                isNewPro:true,
+                isNewPro:false,
             },
             methods: {
                 showAdmin: function () {
