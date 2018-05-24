@@ -1,6 +1,6 @@
 var routes=[
 	{
-		url:'news',
+		url:'news/{id}/{name}',
 		dom:'info/news',
 		script:'info/news.js'
 	}
@@ -15,7 +15,14 @@ window.linkTo=function(url){
 
 
 	function getData(obj){
-		if('#'+obj.url==hash){
+		var param=obj.url.split('/');
+		var paramObj={};
+		for(var i=0;i<paramObj.length;i++){
+			if(i==0)
+				continue;
+		}
+
+		if(paran[0]==hash){
 			var xhr= new XMLHttpRequest();
 			xhr.open('GET',obj.dom+'.html',true);
 			xhr.send(null);
