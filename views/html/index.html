@@ -53,12 +53,12 @@
                 <div class="admin-box-new" v-bind:style="{'display':isAdmin?'block':'none'}">
 
                     <div class="admin-box-show" v-bind:style="{'-webkit-transform':isOpen?'translateY(0%)':''}">
-                        <a v-bind:href="['/vote/PhoneEditor?id=0&nick='+member.real_name+'&memberId='+memberId]"><span class="admin-ico-editor"><i></i><label>编辑文章</label></span></a>
-                        <a v-bind:href="['/vote/ArticleList?memberId='+memberId]"><span class="admin-ico-list"><i></i><label>已发布文章</label></span></a>
-                        <a href="~/Vote/SysNotice"><span class="admin-ico-notice"><i></i><label>发送通知</label></span></a>
-                        <a href="~/Vote/ercode?id=0"><span class="admin-ico-ercode"><i></i><label>领取二维码</label></span></a>
-                        <a v-bind:href="['/Vote/Examine?id='+memberId]"><span class="admin-ico-member"><i></i><label>审核管理</label></span></a>
-                        <a v-bind:href="['/Vote/ChooseBtn?id='+memberId]"><span class="admin-ico-union"><i></i><label>组织信息</label></span></a>
+                        <a v-bind:href="['#PhoneEditor/'+member.real_name+'/'+memberId]"><span class="admin-ico-editor"><i></i><label>编辑文章</label></span></a>
+                        <a v-bind:href="['#ArticleList/'+memberId]"><span class="admin-ico-list"><i></i><label>已发布文章</label></span></a>
+                        <a href="#SysNotice"><span class="admin-ico-notice"><i></i><label>发送通知</label></span></a>
+                        <a href="#ercode"><span class="admin-ico-ercode"><i></i><label>领取二维码</label></span></a>
+                        <a href="Examine"><span class="admin-ico-member"><i></i><label>审核管理</label></span></a>
+                        <a href="#ChooseBtn"><span class="admin-ico-union"><i></i><label>组织信息</label></span></a>
                     </div>
 
                     <button class="admin-button-new" v-bind:class="[isOpen?'admin-button-show':'']"  v-on:click="showAdmin()"></button>

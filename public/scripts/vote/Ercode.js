@@ -2,7 +2,7 @@ var vapp=new Vue({
 	el:'#ercode',
 	data:{
 		type:1,
-		memberId:_param.id,
+		memberId:JSON.parse(sessionStorage.users).member_id,
 		memberCode:'',
 		companyCode:'',
 		showerId:0
@@ -15,7 +15,7 @@ var vapp=new Vue({
 	},
 	mounted:function(data){
 		var t=this;
-		this.memberId = _param.id;
+		// this.memberId = _param.id;
 
 		//this.memberId='1826164934900000376';
 		this.$http.get('http://cj.123zou.com/MobileNews/get_member_info?member_id='+this.memberId).then(function(data){
