@@ -65,8 +65,8 @@ window.linkTo=function(url){
 
 
 	function getData(obj){
-		var param=obj.url.split('/');
-		var hashs=hash.split('/');
+		var param=obj.url.toLowerCase().split('/');
+		var hashs=hash.toLowerCase().split('/');
 		if('#'+param[0]==hashs[0]){
 			var paramObj={};
 			for(var i=0;i<param.length;i++){
