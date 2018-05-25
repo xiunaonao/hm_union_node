@@ -64,7 +64,7 @@
                     }
                     this.member = data.data.data;
                     console.log('获取消息中');
-                    // this.showNoctie(this);
+                    this.showNoctie(this);
                 });
             },
             readMsg:function(obj){

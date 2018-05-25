@@ -13,6 +13,46 @@ var routes=[
 		url:'MemberInfo/{id}',
 		dom:'vote/MemberInfo',
 		script:'vote/memberinfo.js'
+	},
+	{
+		url:'PhoneEditor/{name}/{id}',
+		dom:'vote/PhoneEditor',
+		script:'vote/phoneEditor.js'
+	},
+	{
+		url:'ArticleList/{id}',
+		dom:'vote/ArticleList',
+		script:'vote/ArticleList.js'
+	},
+	{
+		url:'SysNotice',
+		dom:'vote/SysNotice',
+		script:'vote/SysNotice.js'
+	},
+	{
+		url:'Ercode/{id}',
+		dom:'vote/Ercode',
+		script:'vote/Ercode.js'
+	},
+	{
+		url:'Examine/{id}',
+		dom:'vote/Examine',
+		script:'vote/Examine.js'
+	},
+	{
+		url:'ChooseBtn',
+		dom:'vote/ChooseBtn',
+		script:'vote/ChooseBtn.js'
+	},
+	{
+		url:'OrganizeInfo',
+		dom:'vote/OrganizeInfo',
+		script:'vote/OrganizeInfo.js'
+	},
+	{
+		url:'UnitInfo',
+		dom:'vote/UnitInfo',
+		script:'vote/UnitInfo.js'
 	}
 	
 ]

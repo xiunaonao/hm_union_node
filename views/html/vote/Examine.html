@@ -1,0 +1,181 @@
+<title>会员审核</title>
+<style>
+    *{
+        margin:0;
+        padding:0;
+    }
+    a{
+        text-decoration:none;
+    }
+    li{
+        list-style:none;
+    }
+    html,body{
+        height:100%;
+    }
+    .examine_box {
+        width: 100%;
+        min-height:91%;
+        padding-bottom:0.56rem;
+        background-color: #F5F5F5;
+    }
+    .fixed_bottom {
+        width: 100%;
+        padding: 0.1rem 0;
+        background-color: #ffffff;
+        border-top: 1px solid #cccccc;
+        position: fixed;
+        bottom: 0;
+        left: 0;
+    }
+    .fixed_bottom:after {
+        content:'';
+        display:table;
+        clear:both;
+    }
+    .fixed_check{
+        float:left;
+        margin:0.06rem 0 0 0.15rem;
+    }
+    .fixed_check input{
+        float: left;
+        width:0.2rem;
+        height:0.2rem;
+        margin-right:0.1rem;
+    }
+    .fixed_check span {
+        float:left;
+        font-size: 0.14rem;
+        font-family: 'Microsoft YaHei';
+        color: #272C33;
+    }
+    .nopass_a,
+    .pass_a {
+        float: right;
+        width:0.9rem;
+        margin-right:0.15rem;
+        padding:0.09rem 0;
+        background-color:#cccccc;
+        border-radius:0.05rem;
+        text-align:center;
+        font-size: 0.13rem;
+        font-family: 'Microsoft YaHei';
+        color: #333333;
+    }
+    .pass_a {
+        background-color: #1976D2;
+        color:#FFFFFF;
+    } 
+        
+    .examine_ul {
+        width: 92%;
+        margin: 0 auto;
+        padding-top: 0.15rem;
+        padding-left:0;
+    }
+    .examine_ul li {
+        width: 100%;
+        margin-bottom: 0.15rem;
+        box-shadow: 0.02rem 0.02rem 0.05rem #cccccc;
+    }
+    .li_top {
+        width: 100%;
+        padding: 0.15rem 0;
+        background-color: #489DF1;
+        background: -webkit-linear-gradient(left, #1976D2, #489DF1); /* Safari 5.1 - 6.0 */
+        background: -o-linear-gradient(right, #1976D2, #489DF1); /* Opera 11.1 - 12.0 */
+        background: -moz-linear-gradient(right, #1976D2, #489DF1); /* Firefox 3.6 - 15 */
+        background: linear-gradient(to right, #1976D2, #489DF1); /* 标准的语法 */
+    }
+    .li_top:after{
+        content:'';
+        display:table;
+        clear:both;
+    }
+    .li_top input{
+        float:left;
+        width:0.2rem;
+        height:0.2rem;
+        margin-left:0.15rem;
+    }
+    .li_top span {
+        float:right;
+        margin-right:0.15rem;
+        font-size:0.18rem;
+        font-family:'Microsoft YaHei';
+        font-weight:bold;
+        color:#ffffff;
+    }
+    .li_content {
+        width: 100%;
+        padding-top:0.2rem;
+        background-color: #ffffff;
+    }
+    .p_null {
+        margin-top:1.8rem;
+        text-align:center;
+        font-size: 0.18rem;
+        font-family: 'Microsoft YaHei';
+        font-weight: bold;
+        color: #333333;
+    } 
+    
+    .examine_list {
+        padding: 0 0 0.2rem 0.15rem;
+        font-size: 0.14rem;
+        font-family: 'Microsoft YaHei';
+        color: #272C33;
+    }
+
+    .alert_msg {
+        display: none;
+        width: 40%;
+        padding: 0.18rem 0;
+        position: fixed;
+        top: 36%;
+        left: 0;
+        right: 0;
+        margin: auto;
+        background-color: black;
+        border-radius: 3px;
+        opacity: 0.5;
+        line-height: 1.2;
+        text-align: center;
+        font-size: 0.18rem;
+        color: #fff;
+    }
+    .alert_msg p {
+        padding: 0 0.1rem;
+        word-wrap: break-word;
+        word-break: normal;
+    }
+
+</style>
+<div class="examine_box" id="examine">
+    <div class="fixed_bottom">
+        <p class="fixed_check"><input type="checkbox" id="check_all" name="check_all" value=" " /><span>全选</span></p>       
+        <a class="pass_a" href="#">审核通过</a>
+        <a style="display:none;" class="nopass_a" href="#">审核不通过</a>
+    </div>
+    <ul class="examine_ul">
+        <li v-for="obj in news" v-bind:style="{'display':noneTotal==0?'none':'block'}">
+            <div class="li_top">
+                <input type="checkbox" class="check_one" name="check_one" v-bind:value="obj.member_id" />
+                <span>{{obj.real_name}}</span>
+            </div>
+            <div class="li_content">
+                <p class="examine_list" v-bind:style="{'display':obj.user_type==1?'block':'none'}">类型：<span class="examine_type">工作人员</span></p>
+                <p class="examine_list" v-bind:style="{'display':obj.user_type==2?'block':'none'}">类型：<span class="examine_type">普通会员</span></p>
+                <p class="examine_list">联系电话：<span class="examine_phone">{{obj.mobile}}</span></p>
+                <p class="examine_list">身份证号：<span class="examine_code">{{obj.card_number}}</span></p>
+                <p class="examine_list">所在工会：<span class="examine_org">{{obj.organize_name}}</span></p>
+            </div>
+        </li>
+        <p class="p_null" v-bind:style="{'display':noneTotal==0?'block':'none'}">暂无待审核信息</p>
+        
+    </ul>
+</div>
+
+<div class="alert_msg">
+    <p></p>
+</div>

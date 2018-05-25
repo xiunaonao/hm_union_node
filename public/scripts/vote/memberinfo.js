@@ -1,20 +1,20 @@
 $(function () {
 
-            function GetRequest() {
-                var url = decodeURI(location.search);
-                var theRequest = new Object();
-                if (url.indexOf("?") != -1) {
-                    var str = url.substr(1);
-                    strs = str.split("&");
-                    for (var i = 0; i < strs.length; i++) {
-                        theRequest[strs[i].split("=")[0]] = unescape(strs[i].split("=")[1]);
-                    }
-                }
-                return theRequest;
-            }
+            // function GetRequest() {
+            //     var url = decodeURI(location.search);
+            //     var theRequest = new Object();
+            //     if (url.indexOf("?") != -1) {
+            //         var str = url.substr(1);
+            //         strs = str.split("&");
+            //         for (var i = 0; i < strs.length; i++) {
+            //             theRequest[strs[i].split("=")[0]] = unescape(strs[i].split("=")[1]);
+            //         }
+            //     }
+            //     return theRequest;
+            // }
 
-            var oid = GetRequest();
-            console.log(oid.id);
+            // var oid = GetRequest();
+            // console.log(oid);
 
             function showDate(val) {
                 val = val.replace("/Date(", "").replace(")/", "");
@@ -31,7 +31,7 @@ $(function () {
             }
 
             $.ajax({
-                url: "http://cj.123zou.com/Enroll/get_member_info?member_id=" + oid.id,
+                url: "http://cj.123zou.com/Enroll/get_member_info?member_id=" + _param.id,
                 type: "post",
                 dataType: "json",
                 async: false,

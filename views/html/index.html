@@ -33,6 +33,63 @@
         <header id="header">
             
         </header>
+        <div id="admin_box" class="admin-box-old">
+            <div class="newunion-footer" v-if="!isNewPro">
+                <a href="/Info/structure" style="display: none;">工会组织</a>
+                <a href="/info/News">知工会</a>
+                <a href="/info/Exchange">智服务</a>
+                <a href="/info/UserCard">我的<i class="tip-num" v-if='notReadNum>0'>{{notReadNum}}</i></a>
+            </div>
+
+
+            <div v-if="!isNewPro" id="admin_box" class="admin-box" v-bind:style="{'display':isAdmin?'block':'none'}">
+                <ul  v-bind:style="{'-webkit-transform':isOpen?'scale(1)':''}">
+                    <li  v-bind:style="{'-webkit-transform':isOpen?'scale(1)':''}">
+                        <a v-bind:href="['/vote/PhoneEditor?id=0&nick='+member.real_name+'&memberId='+memberId]">编辑文章</a>
+                    </li>
+                    <li v-bind:style="{'-webkit-transform':isOpen?'scale(1)':''}">
+                        <a v-bind:href="['/vote/ArticleList?memberId='+memberId]">文章列表</a>
+                    </li>
+    <!--                 <li v-bind:style="{'-webkit-transform':isOpen?'scale(1)':''}">
+                        <a href="~/Info/structure">矩阵管理</a>
+                    </li> -->
+                    <li v-bind:style="{'-webkit-transform':isOpen?'scale(1)':''}">
+                        <a href="~/Vote/SysNotice">发送通知</a>
+                    </li>
+                        <li v-bind:style="{'-webkit-transform':isOpen?'scale(1)':''}"><a href="~/Vote/ercode?id=0">领取二维码</a></li>
+                        <li v-bind:style="{'-webkit-transform':isOpen?'scale(1)':''}"><a v-bind:href="['/Vote/Examine?id='+memberId]">审核管理</a></li>
+    <!--                 <li  v-bind:style="{'-webkit-transform':isOpen?'scale(1)':''}">
+                        <a href="~/info/Index">管理目录</a>
+                    </li> -->
+                </ul>
+                <button  v-bind:style="{'-webkit-transform':isOpen?'scale(1)':''}" v-on:click="showAdmin()">管理</button>
+            </div>
+
+            <div v-if="isNewPro" id="admin_box_new">
+                <div class="newunion-footer" v-bind:style="{'-webkit-transform':!isOpen?'scale(1)':''}" style="display:none;">
+                    <a href="/Info/structure" style="display: none;">工会组织</a>
+                    <a href="/Vote/MemberInfo" style="display: none;">会员信息</a>
+                    <a href="/info/UserCard">浙江工会</a>
+                    <a href="/info/UserCard" style="display: none;">我的<i class="tip-num" v-if='notReadNum>0'>{{notReadNum}}</i></a>
+                </div>
+                <div class="admin-box-bg" v-bind:style="{'opacity':isOpen?'1':'','display':isOpen?'block':''}"></div>
+                <div class="admin-box-new" v-bind:style="{'display':isAdmin?'block':'none'}">
+
+                    <div class="admin-box-show" v-bind:style="{'-webkit-transform':isOpen?'translateY(0%)':''}">
+                        <a v-bind:href="['#PhoneEditor/'+member.real_name+'/'+memberId]"><span class="admin-ico-editor"><i></i><label>编辑文章</label></span></a>
+                        <a v-bind:href="['#ArticleList/'+memberId]"><span class="admin-ico-list"><i></i><label>已发布文章</label></span></a>
+                        <a href="#SysNotice"><span class="admin-ico-notice"><i></i><label>发送通知</label></span></a>
+                        <a v-bind:href="'#Ercode/'+memberId"><span class="admin-ico-ercode"><i></i><label>领取二维码</label></span></a>
+                        <a v-bind:href="['#Examine/'+memberId]"><span class="admin-ico-member"><i></i><label>审核管理</label></span></a>
+                        <a href="#ChooseBtn"><span class="admin-ico-union"><i></i><label>组织信息</label></span></a>
+                    </div>
+
+                    <button class="admin-button-new" v-bind:class="[isOpen?'admin-button-show':'']"  v-on:click="showAdmin()"></button>
+                </div>
+
+            </div>
+
+        </div>
         <article id="main">
             
         </article>
@@ -65,6 +122,7 @@
         </footer>
     </body>
     <script src="/scripts/sys/router.js"></script>
+    <script src="/scripts/shared/newsLayout.js"></script>
     <script>
         var hash=location.hash.replace('#','');
         console.log(hash)
