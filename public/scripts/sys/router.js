@@ -53,6 +53,11 @@ var routes=[
 		url:'UnitInfo',
 		dom:'vote/UnitInfo',
 		script:'vote/UnitInfo.js'
+	},
+	{
+		url:'exchange',
+		dom:'info/exchange',
+		script:'info/exchange.js'
 	}
 	
 ]
