@@ -4,8 +4,8 @@ var router = express.Router();
 
 let aesMethod=(token,callback)=>{
   token=token.replace(' ','+')
-  let key='UNIONFROMZJBYHMS'
-  let iv='1234567812345678'
+  let key='ZXSWEDCSFRTGBGFW'
+  let iv='8765432176547657'
   var crypted = new Buffer(token, 'base64').toString('binary')
 
   var decipher = crypto.createDecipheriv('aes-128-cbc', key, iv)

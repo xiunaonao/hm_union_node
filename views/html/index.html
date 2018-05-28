@@ -55,12 +55,21 @@
                 <div class="admin-box-new" v-bind:style="{'display':isAdmin?'block':'none'}">
 
                     <div class="admin-box-show" v-bind:style="{'-webkit-transform':isOpen?'translateY(0%)':''}">
+<<<<<<< HEAD
+                        <a v-bind:href="['/vote/PhoneEditor?id=0&nick='+member.real_name+'&memberId='+memberId]"><span class="admin-ico-editor"><i></i><label>编辑文章</label></span></a>
+                        <a v-bind:href="['/vote/ArticleList?memberId='+memberId]"><span class="admin-ico-list"><i></i><label>已发布文章</label></span></a>
+                        <a href="#SysNotice"><span class="admin-ico-notice"><i></i><label>发送通知</label></span></a>
+                        <a href="#ercode?id=0"><span class="admin-ico-ercode"><i></i><label>领取二维码</label></span></a>
+                        <a v-bind:href="['#Examine/'+memberId]"><span class="admin-ico-member"><i></i><label>审核管理</label></span></a>
+                        <a v-bind:href="['#ChooseBtn/'+memberId]"><span class="admin-ico-union"><i></i><label>组织信息</label></span></a>
+=======
                         <a v-bind:href="['#PhoneEditor/'+member.real_name+'/'+memberId]"><span class="admin-ico-editor"><i></i><label>编辑文章</label></span></a>
                         <a v-bind:href="['#ArticleList/'+memberId]"><span class="admin-ico-list"><i></i><label>已发布文章</label></span></a>
                         <a href="#SysNotice"><span class="admin-ico-notice"><i></i><label>发送通知</label></span></a>
                         <a href="#ercode"><span class="admin-ico-ercode"><i></i><label>领取二维码</label></span></a>
                         <a href="#Examine"><span class="admin-ico-member"><i></i><label>审核管理</label></span></a>
                         <a href="#ChooseBtn"><span class="admin-ico-union"><i></i><label>组织信息</label></span></a>
+>>>>>>> 84c21ce05d364e7884e0d9feffbb49b6f9aad3e3
                     </div>
 
                     <button class="admin-button-new" v-bind:class="[isOpen?'admin-button-show':'']"  v-on:click="showAdmin()"></button>
