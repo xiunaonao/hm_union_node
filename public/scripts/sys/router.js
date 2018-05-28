@@ -30,12 +30,12 @@ var routes=[
 		script:'vote/SysNotice.js'
 	},
 	{
-		url:'Ercode/{id}',
+		url:'ercode',
 		dom:'vote/Ercode',
 		script:'vote/Ercode.js'
 	},
 	{
-		url:'Examine/{id}',
+		url:'Examine',
 		dom:'vote/Examine',
 		script:'vote/Examine.js'
 	},

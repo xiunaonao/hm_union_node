@@ -68,7 +68,7 @@ var vapp = new Vue({
         getNews: function () {
             var that = this;
             //var id = that.getRequest();
-            var id = _param.id;
+            var id = JSON.parse(sessionStorage.users).member_id;
             var idNum = id;
             console.log(idNum);
             var memberUrl = 'http://cj.123zou.com/MobileNews/get_member_info?member_id=' + idNum;

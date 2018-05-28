@@ -1,4 +1,4 @@
-    //changeIco(1);
+    // changeIco(1);
     var vapp = new Vue({
         el: '#newslist',
         data: {
@@ -16,7 +16,7 @@
             isCool: true,
             isAdmin:false,
             select_box:false,
-            //memberId:'1826566334700001531',
+            memberId:JSON.parse(sessionStorage.users).member_id,
             bannerTouch:false,
             touchUnion:{name:''},
             bannerPos:{x:0,y:0},

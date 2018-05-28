@@ -46,7 +46,7 @@
         data: {
             member: {},
             isUserCard:true,
-            memberId: '1826164934900000376',
+            memberId: JSON.parse(sessionStorage.users).member_id,
             msg:[],
             is_zj:false
         },

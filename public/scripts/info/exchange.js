@@ -2,7 +2,7 @@ var users = JSON.parse(sessionStorage.users);
 var memid = users.member_id;
 console.log(memid);
 
-changeIco(2);
+// changeIco(2);
 var vapp = new Vue({
     el: '#exchange',
     data: {
