@@ -1,0 +1,151 @@
+<title>留言咨询</title>
+<style type="text/css">
+    html {
+        background: #FAFBFB;
+    }
+    input {
+       
+    }
+    select {
+       
+    } 
+    .lawForm {
+        padding: 20px 5%;
+        margin-bottom:50px;
+    }
+    .otherInfo_box{
+        font-size:14px;
+        margin-bottom:10px;
+    }
+    .formTitle {
+        display: inline-block;
+        height: 30px;
+        line-height: 30px;
+        width:25%;
+        text-align:right;
+    }
+    .relaName_input {
+        height: 30px;
+        line-height: 30px;
+        text-align: left;
+        width: 55%;
+        padding: 0 10px;
+        margin-left: 6px;
+        border: 1px solid #e0e0e0;
+        -webkit-appearance:none;
+    }
+    .otherInfo_box .otherInfoSelect{
+        width:62%;
+    }
+    .otherInfo_box .bornInfoSelect{
+        width:30%;
+    }
+    .chooseSex{
+        height:30px;
+        line-height:30px;
+        display:inline-block;
+        width:60%;
+        margin-left:6px;
+        padding:0 10px;
+    }
+    .lawForm .chooseSex input {
+        
+    }
+    .chooseSex label{
+        width:60px;
+        height:30px;
+        line-height:30px;
+    }
+    .otherInfo_countent{
+        font-size:14px;
+        margin-bottom:10px;
+        position:relative;
+    }
+    .infoCountent{
+        margin-left:28%;
+        height:100px;
+        width:60%;
+        text-align:left;
+    }
+    .Consultation{
+        position:absolute;
+        top:0;
+    }
+    .questionBtn{
+        text-align:center;
+        font-size:14px;
+        margin-top:30px;
+    }
+    .form_btn {
+        display:inline-block;
+        width: 50%;
+        height: 30px;
+        line-height: 30px;
+        color: #fff;
+        background: #A40000;
+        border-radius:3px;
+    }
+    .otherInfo input {
+        font-size: 14px;
+    }
+    .infoCountent {
+        font-size: 14px;
+    }
+</style>
+
+<div class="lawForm">
+    <form class="otherInfo" action="">
+        <div class="otherInfo_box">
+            <span class="relaName formTitle">姓名:</span>
+            <input class="relaName_input" type="text" id="name" placeholder="请输入姓名"/>
+        </div>
+        <div class="otherInfo_box ">
+            <span class="formTitle">选择律师:</span>
+            <select class="relaName_input otherInfoSelect" id="choceLaw" >
+                <option value="陈小龙">陈小龙</option>
+                <option value="陆建国">陆建国</option>
+                <option value="徐雪峰">徐雪峰</option>
+                <option value="许云伟">许云伟</option>
+            </select>
+        </div>
+        <div class="otherInfo_box ">
+            <span class="formTitle">出生日期:</span>
+            <select class="relaName_input bornInfoSelect" id="choceBornYear">
+            	<!-- <option value="@i">@Html.Raw(i + "年")</option> -->
+            </select>
+            <select class="relaName_input bornInfoSelect" id="choceBornMonth">
+            	<!-- <option value="@i">@Html.Raw(i + "月")</option> -->
+            </select>
+        </div>
+        <div class="otherInfo_box">
+            <span class="formTitle">性别:</span>
+            <span class="chooseSex">
+                <label><input name="sex" type="radio" value="男" checked="checked" />男</label>
+                <label style="margin-left:20px"><input name="sex" type="radio" value="女" />女</label>
+            </span>
+        </div>
+        <div class="otherInfo_box">
+            <span class="formTitle">民族:</span>
+            <input class="relaName_input" type="text" id="familyName" placeholder="请输入民族" />
+        </div>
+        <div class="otherInfo_box">
+            <span class="formTitle">身份证号码:</span>
+            <input class="relaName_input" type="text" id="IDcard" placeholder="请输入身份证号码" />
+        </div>
+        <div class="otherInfo_box">
+            <span class="formTitle">工作单位:</span>
+            <input class="relaName_input" type="text" id="workPlace" placeholder="请输入您的工作单位" />
+        </div>
+        <div class="otherInfo_box">
+            <span class="formTitle">联系电话:</span>
+            <input class="relaName_input" type="text" id="phone" placeholder="请输入您的联系电话" />
+        </div>
+        <div class="otherInfo_countent">
+            <span class="formTitle Consultation">咨询内容:</span>
+            <textarea class="infoCountent" placeholder="请输入您的咨询内容"></textarea>
+        </div>
+    </form>
+    <div class="questionBtn">
+        <span class="form_btn">立即求助</span>
+    </div>
+</div>

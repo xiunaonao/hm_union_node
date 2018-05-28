@@ -1,0 +1,97 @@
+<title>政策法规</title>
+<style type="text/css">
+	*{margin:0;padding:0;}
+	li{list-style:none;}
+	a{text-decoration:none; color:#000000;}
+	body,html{width:100%;height:100%;}
+
+	.top_nav { width: 3.75rem; height: 0.44rem; line-height: 0.44rem; text-align: center; border-bottom: 0.01rem solid #FFEEEE; }
+	.top_nav .back { position: absolute; left: 0.1rem; top: 0.15rem; width: 0.09rem; height: 0.15rem; background-size: 100%; display: inline-block; background-image: url("/images/back@2x.png"); }
+	.top_nav .top_title { font-size: 0.15rem; font-family:'Microsoft YaHei'; font-weight:bold; color: #000000; }
+
+	.top-img{ width:100%; display:block; margin:0 auto;}
+
+	.mian_btn{ width:100%; height:0.2rem; display:table;}
+	.mian_btn a{ display:table-cell; width:20%; padding:0.15rem 0; background:#ffffff; text-align:center; font-size:0.16rem; font-family:'Microsoft YaHei'; font-weight:bold; color:#323232;}
+	.mian_btn .btn_red{ display:table-cell; width:20%; padding:0.15rem 0; background:#ffffff; border-bottom:0.03rem solid red; text-align:center; font-size:0.16rem; font-family:'Microsoft YaHei'; font-weight:bold; color:red;}
+
+	.policy-list{ padding:0.15rem; background:#F5F5F5;}
+	.policy-list li{ width:100%; margin-bottom:0.15rem; padding:0.15rem 0; background:#ffffff;}
+	.policy-list li p{ margin-bottom:0.1rem; padding:0 0.15rem; font-size:0.15rem; line-height:1.5; font-family:'Microsoft YaHei';}
+	.policy-list li .div-look{ padding:0 0.15rem;}
+	.policy-list li .div-look:after{ content:""; clear:both; display:table;}
+	.policy-list li .div-look .sp-left{ float:left; font-size:0.13rem; font-family:'Microsoft YaHei'; color:#cccccc;}
+	.policy-list li .div-look .sp-right{ float:right; font-size:0.13rem; font-family:'Microsoft YaHei'; color:#cccccc;}
+</style>
+<div class="policy-box" id="policy">
+    <div class="top_nav">
+        <div class="back" onclick="history.go(-1);"></div>
+        <div class="top_title">政策法规</div>
+    </div>
+
+    <img class="top-img" src="/images/zcfg.jpg" />
+
+    <div class="mian_btn">
+        <a v-on:click="changeTab(0)" v-bind:class="[uIndex==0?'btn_red':'']">政策法规</a><a v-on:click="changeTab(1)" v-bind:class="[uIndex==1?'btn_red':'']">县总文件</a>
+    </div>
+    <ul class="policy-list">
+
+        <li v-bind:style="{'display':uIndex==1?'block':'none'}">
+            <a href="/Scripts/download/长总工（2018）12号长兴县总工会关于推进基层工会组织和工会会员实名制管理工作的通知（红头）.pdf">
+                <p class="p-title">长总工（2018）12号长兴县总工会关于推进基层工会组织和工会会员实名制管理工作的通知（红头）</p>
+                <div class="div-look"><span class="sp-left" style="display:none;"><span class="look-num">0</span>阅读</span><span class="sp-right">2018-05-15</span></div>
+            </a>
+        </li>
+
+        <li v-for="obj in news">
+            <a v-bind:href="[obj.news_outer_url?obj.news_outer_url:'/vote/PhoneDetail?id='+obj.news_id]">
+                <p class="p-title">{{obj.news_title}}</p>
+                <div class="div-look"><span class="sp-left" style="display:none;"><span class="look-num">0</span>阅读</span><span class="sp-right">{{showDate(obj.publish_time)}}</span></div>
+            </a>
+        </li>
+        <li v-bind:style="{'display':uIndex==1?'block':'none'}">
+            <a href="/Scripts/download/长总工（2018） 15号（关于开展2018年度职工休养本地行奖励活动的通知（红头）.pdf">
+                <p class="p-title">长总工（2018） 15号（关于开展2018年度职工休养本地行奖励活动的通知（红头）</p>
+                <div class="div-look"><span class="sp-left" style="display:none;"><span class="look-num">0</span>阅读</span><span class="sp-right">2018-05-2</span></div>
+            </a>
+        </li>
+        <li v-bind:style="{'display':uIndex==1?'block':'none'}">
+            <a href="/Scripts/download/长总工（2018）14号关于印发《长兴县困难职工帮扶实施办法》的通知(试行)（红头）.pdf">
+                <p class="p-title">长总工（2018）14号关于印发《长兴县困难职工帮扶实施办法》的通知(试行)（红头）</p>
+                <div class="div-look"><span class="sp-left" style="display:none;"><span class="look-num">0</span>阅读</span><span class="sp-right">2018-05-2</span></div>
+            </a>
+        </li>
+
+        <li v-bind:style="{'display':uIndex==0?'block':'none'}">
+            <a href="/Scripts/download/基层工会组织建设实用操作手册.pdf">
+                <p class="p-title">基层工会组织建设实用操作手册</p>
+                <div class="div-look"><span class="sp-left" style="display:none;"><span class="look-num">0</span>阅读</span><span class="sp-right">2018-05-2</span></div>
+            </a>
+        </li>
+
+        <li v-bind:style="{'display':uIndex==1?'block':'none'}">
+            <a href="/Scripts/download/2018关于在全县职工中开展“聚焦效益品质，聚力创业创新”主题劳动竞赛活动的通知.pdf">
+                <p class="p-title">2018关于在全县职工中开展“聚焦效益品质，聚力创业创新”主题劳动竞赛活动的通知</p>
+                <div class="div-look"><span class="sp-left" style="display:none;"><span class="look-num">0</span>阅读</span><span class="sp-right">2018-05-2</span></div>
+            </a>
+        </li>
+        <li v-bind:style="{'display':uIndex==1?'block':'none'}">
+            <a href="/Scripts/download/关于举办2018年长兴县工会系统工会干部系列培训班的通知.pdf">
+                <p class="p-title">关于举办2018年长兴县工会系统工会干部系列培训班的通知</p>
+                <div class="div-look"><span class="sp-left" style="display:none;"><span class="look-num">0</span>阅读</span><span class="sp-right">2018-05-2</span></div>
+            </a>
+        </li>
+        <li v-bind:style="{'display':uIndex==1?'block':'none'}">
+            <a href="/Scripts/download/关于申请、变更工会法人的有关事项（总）.pdf">
+                <p class="p-title">关于申请、变更工会法人的有关事项（总）</p>
+                <div class="div-look"><span class="sp-left" style="display:none;"><span class="look-num">0</span>阅读</span><span class="sp-right">2018-05-2</span></div>
+            </a>
+        </li>
+        <li v-bind:style="{'display':uIndex==1?'block':'none'}">
+            <a href="/Scripts/download/加强和规范基层工会经费收支管理的实施细则的通知.pdf">
+                <p class="p-title">加强和规范基层工会经费收支管理的实施细则的通知</p>
+                <div class="div-look"><span class="sp-left" style="display:none;"><span class="look-num">0</span>阅读</span><span class="sp-right">2018-05-2</span></div>
+            </a>
+        </li>
+    </ul>
+</div>

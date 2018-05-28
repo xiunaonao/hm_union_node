@@ -58,6 +58,54 @@ var routes=[
 		url:'exchange',
 		dom:'info/exchange',
 		script:'info/exchange.js'
+	},
+	{
+		url:'serviceLaw',
+		dom:'servicehall/serviceLaw',
+		script:'servicehall/serviceLaw.js'
+	},
+	{
+		url:'serviceLawForm',
+		dom:'servicehall/serviceLawForm',
+		script:'servicehall/serviceLawForm.js'
+	},
+	{
+		url:'policy',
+		dom:'info/policy',
+		script:'info/policy.js'
+	},
+	{
+		url:'join',
+		dom:'info/join',
+		script:'info/join.js'
+	},
+	{
+		url:'phoneDetail/{id}',
+		dom:'vote/phoneDetail',
+		script:'vote/phoneDetail.js'
+	},
+	{
+		url:'zgTeacher/{type}',
+		dom:'info/zgTeacher',
+		script:'info/zgTeacher.js'
+	},
+	{
+		url:'serviceMedical',
+		dom:'servicehall/serviceMedical',
+		script:'servicehall/serviceMedical.js'
+	},
+	{
+		url:'promote',
+		dom:'info/promote'
+	},
+	{
+		url:'userGame',
+		dom:'info/userGame'
+	},
+	{
+		url:'exchangeMoreDemo',
+		dom:'info/exchangeMoreDemo',
+		script:'info/exchangeMoreDemo.js'
 	}
 	
 ]
